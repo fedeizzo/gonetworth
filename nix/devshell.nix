@@ -17,7 +17,9 @@
       {
         help = "Run all tests";
         name = "test";
-        command = "${pkgs.gotestdox}/bin/gotestdox --format testdox";
+        command = ''
+          gotestsum --format testdox
+        '';
       }
       {
         help = "Run the tool";
@@ -31,6 +33,8 @@
       gopls
       gotestsum
       gotestdox
+      sqlc
+      go-mockery
     ] ++ config.pre-commit.settings.enabledPackages;
 
     devshell.startup.pre-commit-hooks.text = config.pre-commit.installationScript;
