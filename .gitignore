@@ -29,3 +29,4 @@ go.work.sum
 /.pre-commit-config.yaml
 /gonetworth
 /*.csv
+/gonetworth.yaml
