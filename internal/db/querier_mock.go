@@ -79,6 +79,716 @@ func (_c *MockQuerier_GetAccounts_Call) RunAndReturn(run func(context.Context) (
 	return _c
 }
 
+// GetExpenseAccounts provides a mock function with given fields: ctx
+func (_m *MockQuerier) GetExpenseAccounts(ctx context.Context) ([]ExpenseAccount, error) {
+	ret := _m.Called(ctx)
+
+	if len(ret) == 0 {
+		panic("no return value specified for GetExpenseAccounts")
+	}
+
+	var r0 []ExpenseAccount
+	var r1 error
+	if rf, ok := ret.Get(0).(func(context.Context) ([]ExpenseAccount, error)); ok {
+		return rf(ctx)
+	}
+	if rf, ok := ret.Get(0).(func(context.Context) []ExpenseAccount); ok {
+		r0 = rf(ctx)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).([]ExpenseAccount)
+		}
+	}
+
+	if rf, ok := ret.Get(1).(func(context.Context) error); ok {
+		r1 = rf(ctx)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
+// MockQuerier_GetExpenseAccounts_Call is a *mock.Call that shadows Run/Return methods with type explicit version for method 'GetExpenseAccounts'
+type MockQuerier_GetExpenseAccounts_Call struct {
+	*mock.Call
+}
+
+// GetExpenseAccounts is a helper method to define mock.On call
+//   - ctx context.Context
+func (_e *MockQuerier_Expecter) GetExpenseAccounts(ctx interface{}) *MockQuerier_GetExpenseAccounts_Call {
+	return &MockQuerier_GetExpenseAccounts_Call{Call: _e.mock.On("GetExpenseAccounts", ctx)}
+}
+
+func (_c *MockQuerier_GetExpenseAccounts_Call) Run(run func(ctx context.Context)) *MockQuerier_GetExpenseAccounts_Call {
+	_c.Call.Run(func(args mock.Arguments) {
+		run(args[0].(context.Context))
+	})
+	return _c
+}
+
+func (_c *MockQuerier_GetExpenseAccounts_Call) Return(_a0 []ExpenseAccount, _a1 error) *MockQuerier_GetExpenseAccounts_Call {
+	_c.Call.Return(_a0, _a1)
+	return _c
+}
+
+func (_c *MockQuerier_GetExpenseAccounts_Call) RunAndReturn(run func(context.Context) ([]ExpenseAccount, error)) *MockQuerier_GetExpenseAccounts_Call {
+	_c.Call.Return(run)
+	return _c
+}
+
+// GetExpenseCategories provides a mock function with given fields: ctx
+func (_m *MockQuerier) GetExpenseCategories(ctx context.Context) ([]ExpenseCategory, error) {
+	ret := _m.Called(ctx)
+
+	if len(ret) == 0 {
+		panic("no return value specified for GetExpenseCategories")
+	}
+
+	var r0 []ExpenseCategory
+	var r1 error
+	if rf, ok := ret.Get(0).(func(context.Context) ([]ExpenseCategory, error)); ok {
+		return rf(ctx)
+	}
+	if rf, ok := ret.Get(0).(func(context.Context) []ExpenseCategory); ok {
+		r0 = rf(ctx)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).([]ExpenseCategory)
+		}
+	}
+
+	if rf, ok := ret.Get(1).(func(context.Context) error); ok {
+		r1 = rf(ctx)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
+// MockQuerier_GetExpenseCategories_Call is a *mock.Call that shadows Run/Return methods with type explicit version for method 'GetExpenseCategories'
+type MockQuerier_GetExpenseCategories_Call struct {
+	*mock.Call
+}
+
+// GetExpenseCategories is a helper method to define mock.On call
+//   - ctx context.Context
+func (_e *MockQuerier_Expecter) GetExpenseCategories(ctx interface{}) *MockQuerier_GetExpenseCategories_Call {
+	return &MockQuerier_GetExpenseCategories_Call{Call: _e.mock.On("GetExpenseCategories", ctx)}
+}
+
+func (_c *MockQuerier_GetExpenseCategories_Call) Run(run func(ctx context.Context)) *MockQuerier_GetExpenseCategories_Call {
+	_c.Call.Run(func(args mock.Arguments) {
+		run(args[0].(context.Context))
+	})
+	return _c
+}
+
+func (_c *MockQuerier_GetExpenseCategories_Call) Return(_a0 []ExpenseCategory, _a1 error) *MockQuerier_GetExpenseCategories_Call {
+	_c.Call.Return(_a0, _a1)
+	return _c
+}
+
+func (_c *MockQuerier_GetExpenseCategories_Call) RunAndReturn(run func(context.Context) ([]ExpenseCategory, error)) *MockQuerier_GetExpenseCategories_Call {
+	_c.Call.Return(run)
+	return _c
+}
+
+// GetExpenses provides a mock function with given fields: ctx
+func (_m *MockQuerier) GetExpenses(ctx context.Context) error {
+	ret := _m.Called(ctx)
+
+	if len(ret) == 0 {
+		panic("no return value specified for GetExpenses")
+	}
+
+	var r0 error
+	if rf, ok := ret.Get(0).(func(context.Context) error); ok {
+		r0 = rf(ctx)
+	} else {
+		r0 = ret.Error(0)
+	}
+
+	return r0
+}
+
+// MockQuerier_GetExpenses_Call is a *mock.Call that shadows Run/Return methods with type explicit version for method 'GetExpenses'
+type MockQuerier_GetExpenses_Call struct {
+	*mock.Call
+}
+
+// GetExpenses is a helper method to define mock.On call
+//   - ctx context.Context
+func (_e *MockQuerier_Expecter) GetExpenses(ctx interface{}) *MockQuerier_GetExpenses_Call {
+	return &MockQuerier_GetExpenses_Call{Call: _e.mock.On("GetExpenses", ctx)}
+}
+
+func (_c *MockQuerier_GetExpenses_Call) Run(run func(ctx context.Context)) *MockQuerier_GetExpenses_Call {
+	_c.Call.Run(func(args mock.Arguments) {
+		run(args[0].(context.Context))
+	})
+	return _c
+}
+
+func (_c *MockQuerier_GetExpenses_Call) Return(_a0 error) *MockQuerier_GetExpenses_Call {
+	_c.Call.Return(_a0)
+	return _c
+}
+
+func (_c *MockQuerier_GetExpenses_Call) RunAndReturn(run func(context.Context) error) *MockQuerier_GetExpenses_Call {
+	_c.Call.Return(run)
+	return _c
+}
+
+// GetIncomeAccounts provides a mock function with given fields: ctx
+func (_m *MockQuerier) GetIncomeAccounts(ctx context.Context) ([]IncomeAccount, error) {
+	ret := _m.Called(ctx)
+
+	if len(ret) == 0 {
+		panic("no return value specified for GetIncomeAccounts")
+	}
+
+	var r0 []IncomeAccount
+	var r1 error
+	if rf, ok := ret.Get(0).(func(context.Context) ([]IncomeAccount, error)); ok {
+		return rf(ctx)
+	}
+	if rf, ok := ret.Get(0).(func(context.Context) []IncomeAccount); ok {
+		r0 = rf(ctx)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).([]IncomeAccount)
+		}
+	}
+
+	if rf, ok := ret.Get(1).(func(context.Context) error); ok {
+		r1 = rf(ctx)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
+// MockQuerier_GetIncomeAccounts_Call is a *mock.Call that shadows Run/Return methods with type explicit version for method 'GetIncomeAccounts'
+type MockQuerier_GetIncomeAccounts_Call struct {
+	*mock.Call
+}
+
+// GetIncomeAccounts is a helper method to define mock.On call
+//   - ctx context.Context
+func (_e *MockQuerier_Expecter) GetIncomeAccounts(ctx interface{}) *MockQuerier_GetIncomeAccounts_Call {
+	return &MockQuerier_GetIncomeAccounts_Call{Call: _e.mock.On("GetIncomeAccounts", ctx)}
+}
+
+func (_c *MockQuerier_GetIncomeAccounts_Call) Run(run func(ctx context.Context)) *MockQuerier_GetIncomeAccounts_Call {
+	_c.Call.Run(func(args mock.Arguments) {
+		run(args[0].(context.Context))
+	})
+	return _c
+}
+
+func (_c *MockQuerier_GetIncomeAccounts_Call) Return(_a0 []IncomeAccount, _a1 error) *MockQuerier_GetIncomeAccounts_Call {
+	_c.Call.Return(_a0, _a1)
+	return _c
+}
+
+func (_c *MockQuerier_GetIncomeAccounts_Call) RunAndReturn(run func(context.Context) ([]IncomeAccount, error)) *MockQuerier_GetIncomeAccounts_Call {
+	_c.Call.Return(run)
+	return _c
+}
+
+// GetIncomeCategories provides a mock function with given fields: ctx
+func (_m *MockQuerier) GetIncomeCategories(ctx context.Context) ([]IncomeCategory, error) {
+	ret := _m.Called(ctx)
+
+	if len(ret) == 0 {
+		panic("no return value specified for GetIncomeCategories")
+	}
+
+	var r0 []IncomeCategory
+	var r1 error
+	if rf, ok := ret.Get(0).(func(context.Context) ([]IncomeCategory, error)); ok {
+		return rf(ctx)
+	}
+	if rf, ok := ret.Get(0).(func(context.Context) []IncomeCategory); ok {
+		r0 = rf(ctx)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).([]IncomeCategory)
+		}
+	}
+
+	if rf, ok := ret.Get(1).(func(context.Context) error); ok {
+		r1 = rf(ctx)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
+// MockQuerier_GetIncomeCategories_Call is a *mock.Call that shadows Run/Return methods with type explicit version for method 'GetIncomeCategories'
+type MockQuerier_GetIncomeCategories_Call struct {
+	*mock.Call
+}
+
+// GetIncomeCategories is a helper method to define mock.On call
+//   - ctx context.Context
+func (_e *MockQuerier_Expecter) GetIncomeCategories(ctx interface{}) *MockQuerier_GetIncomeCategories_Call {
+	return &MockQuerier_GetIncomeCategories_Call{Call: _e.mock.On("GetIncomeCategories", ctx)}
+}
+
+func (_c *MockQuerier_GetIncomeCategories_Call) Run(run func(ctx context.Context)) *MockQuerier_GetIncomeCategories_Call {
+	_c.Call.Run(func(args mock.Arguments) {
+		run(args[0].(context.Context))
+	})
+	return _c
+}
+
+func (_c *MockQuerier_GetIncomeCategories_Call) Return(_a0 []IncomeCategory, _a1 error) *MockQuerier_GetIncomeCategories_Call {
+	_c.Call.Return(_a0, _a1)
+	return _c
+}
+
+func (_c *MockQuerier_GetIncomeCategories_Call) RunAndReturn(run func(context.Context) ([]IncomeCategory, error)) *MockQuerier_GetIncomeCategories_Call {
+	_c.Call.Return(run)
+	return _c
+}
+
+// GetIncomes provides a mock function with given fields: ctx
+func (_m *MockQuerier) GetIncomes(ctx context.Context) error {
+	ret := _m.Called(ctx)
+
+	if len(ret) == 0 {
+		panic("no return value specified for GetIncomes")
+	}
+
+	var r0 error
+	if rf, ok := ret.Get(0).(func(context.Context) error); ok {
+		r0 = rf(ctx)
+	} else {
+		r0 = ret.Error(0)
+	}
+
+	return r0
+}
+
+// MockQuerier_GetIncomes_Call is a *mock.Call that shadows Run/Return methods with type explicit version for method 'GetIncomes'
+type MockQuerier_GetIncomes_Call struct {
+	*mock.Call
+}
+
+// GetIncomes is a helper method to define mock.On call
+//   - ctx context.Context
+func (_e *MockQuerier_Expecter) GetIncomes(ctx interface{}) *MockQuerier_GetIncomes_Call {
+	return &MockQuerier_GetIncomes_Call{Call: _e.mock.On("GetIncomes", ctx)}
+}
+
+func (_c *MockQuerier_GetIncomes_Call) Run(run func(ctx context.Context)) *MockQuerier_GetIncomes_Call {
+	_c.Call.Run(func(args mock.Arguments) {
+		run(args[0].(context.Context))
+	})
+	return _c
+}
+
+func (_c *MockQuerier_GetIncomes_Call) Return(_a0 error) *MockQuerier_GetIncomes_Call {
+	_c.Call.Return(_a0)
+	return _c
+}
+
+func (_c *MockQuerier_GetIncomes_Call) RunAndReturn(run func(context.Context) error) *MockQuerier_GetIncomes_Call {
+	_c.Call.Return(run)
+	return _c
+}
+
+// GetTransferCategories provides a mock function with given fields: ctx
+func (_m *MockQuerier) GetTransferCategories(ctx context.Context) ([]TransferCategory, error) {
+	ret := _m.Called(ctx)
+
+	if len(ret) == 0 {
+		panic("no return value specified for GetTransferCategories")
+	}
+
+	var r0 []TransferCategory
+	var r1 error
+	if rf, ok := ret.Get(0).(func(context.Context) ([]TransferCategory, error)); ok {
+		return rf(ctx)
+	}
+	if rf, ok := ret.Get(0).(func(context.Context) []TransferCategory); ok {
+		r0 = rf(ctx)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).([]TransferCategory)
+		}
+	}
+
+	if rf, ok := ret.Get(1).(func(context.Context) error); ok {
+		r1 = rf(ctx)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
+// MockQuerier_GetTransferCategories_Call is a *mock.Call that shadows Run/Return methods with type explicit version for method 'GetTransferCategories'
+type MockQuerier_GetTransferCategories_Call struct {
+	*mock.Call
+}
+
+// GetTransferCategories is a helper method to define mock.On call
+//   - ctx context.Context
+func (_e *MockQuerier_Expecter) GetTransferCategories(ctx interface{}) *MockQuerier_GetTransferCategories_Call {
+	return &MockQuerier_GetTransferCategories_Call{Call: _e.mock.On("GetTransferCategories", ctx)}
+}
+
+func (_c *MockQuerier_GetTransferCategories_Call) Run(run func(ctx context.Context)) *MockQuerier_GetTransferCategories_Call {
+	_c.Call.Run(func(args mock.Arguments) {
+		run(args[0].(context.Context))
+	})
+	return _c
+}
+
+func (_c *MockQuerier_GetTransferCategories_Call) Return(_a0 []TransferCategory, _a1 error) *MockQuerier_GetTransferCategories_Call {
+	_c.Call.Return(_a0, _a1)
+	return _c
+}
+
+func (_c *MockQuerier_GetTransferCategories_Call) RunAndReturn(run func(context.Context) ([]TransferCategory, error)) *MockQuerier_GetTransferCategories_Call {
+	_c.Call.Return(run)
+	return _c
+}
+
+// GetTransfers provides a mock function with given fields: ctx
+func (_m *MockQuerier) GetTransfers(ctx context.Context) error {
+	ret := _m.Called(ctx)
+
+	if len(ret) == 0 {
+		panic("no return value specified for GetTransfers")
+	}
+
+	var r0 error
+	if rf, ok := ret.Get(0).(func(context.Context) error); ok {
+		r0 = rf(ctx)
+	} else {
+		r0 = ret.Error(0)
+	}
+
+	return r0
+}
+
+// MockQuerier_GetTransfers_Call is a *mock.Call that shadows Run/Return methods with type explicit version for method 'GetTransfers'
+type MockQuerier_GetTransfers_Call struct {
+	*mock.Call
+}
+
+// GetTransfers is a helper method to define mock.On call
+//   - ctx context.Context
+func (_e *MockQuerier_Expecter) GetTransfers(ctx interface{}) *MockQuerier_GetTransfers_Call {
+	return &MockQuerier_GetTransfers_Call{Call: _e.mock.On("GetTransfers", ctx)}
+}
+
+func (_c *MockQuerier_GetTransfers_Call) Run(run func(ctx context.Context)) *MockQuerier_GetTransfers_Call {
+	_c.Call.Run(func(args mock.Arguments) {
+		run(args[0].(context.Context))
+	})
+	return _c
+}
+
+func (_c *MockQuerier_GetTransfers_Call) Return(_a0 error) *MockQuerier_GetTransfers_Call {
+	_c.Call.Return(_a0)
+	return _c
+}
+
+func (_c *MockQuerier_GetTransfers_Call) RunAndReturn(run func(context.Context) error) *MockQuerier_GetTransfers_Call {
+	_c.Call.Return(run)
+	return _c
+}
+
+// InsertAccount provides a mock function with given fields: ctx, arg
+func (_m *MockQuerier) InsertAccount(ctx context.Context, arg InsertAccountParams) error {
+	ret := _m.Called(ctx, arg)
+
+	if len(ret) == 0 {
+		panic("no return value specified for InsertAccount")
+	}
+
+	var r0 error
+	if rf, ok := ret.Get(0).(func(context.Context, InsertAccountParams) error); ok {
+		r0 = rf(ctx, arg)
+	} else {
+		r0 = ret.Error(0)
+	}
+
+	return r0
+}
+
+// MockQuerier_InsertAccount_Call is a *mock.Call that shadows Run/Return methods with type explicit version for method 'InsertAccount'
+type MockQuerier_InsertAccount_Call struct {
+	*mock.Call
+}
+
+// InsertAccount is a helper method to define mock.On call
+//   - ctx context.Context
+//   - arg InsertAccountParams
+func (_e *MockQuerier_Expecter) InsertAccount(ctx interface{}, arg interface{}) *MockQuerier_InsertAccount_Call {
+	return &MockQuerier_InsertAccount_Call{Call: _e.mock.On("InsertAccount", ctx, arg)}
+}
+
+func (_c *MockQuerier_InsertAccount_Call) Run(run func(ctx context.Context, arg InsertAccountParams)) *MockQuerier_InsertAccount_Call {
+	_c.Call.Run(func(args mock.Arguments) {
+		run(args[0].(context.Context), args[1].(InsertAccountParams))
+	})
+	return _c
+}
+
+func (_c *MockQuerier_InsertAccount_Call) Return(_a0 error) *MockQuerier_InsertAccount_Call {
+	_c.Call.Return(_a0)
+	return _c
+}
+
+func (_c *MockQuerier_InsertAccount_Call) RunAndReturn(run func(context.Context, InsertAccountParams) error) *MockQuerier_InsertAccount_Call {
+	_c.Call.Return(run)
+	return _c
+}
+
+// InsertExpenseAccount provides a mock function with given fields: ctx, arg
+func (_m *MockQuerier) InsertExpenseAccount(ctx context.Context, arg InsertExpenseAccountParams) error {
+	ret := _m.Called(ctx, arg)
+
+	if len(ret) == 0 {
+		panic("no return value specified for InsertExpenseAccount")
+	}
+
+	var r0 error
+	if rf, ok := ret.Get(0).(func(context.Context, InsertExpenseAccountParams) error); ok {
+		r0 = rf(ctx, arg)
+	} else {
+		r0 = ret.Error(0)
+	}
+
+	return r0
+}
+
+// MockQuerier_InsertExpenseAccount_Call is a *mock.Call that shadows Run/Return methods with type explicit version for method 'InsertExpenseAccount'
+type MockQuerier_InsertExpenseAccount_Call struct {
+	*mock.Call
+}
+
+// InsertExpenseAccount is a helper method to define mock.On call
+//   - ctx context.Context
+//   - arg InsertExpenseAccountParams
+func (_e *MockQuerier_Expecter) InsertExpenseAccount(ctx interface{}, arg interface{}) *MockQuerier_InsertExpenseAccount_Call {
+	return &MockQuerier_InsertExpenseAccount_Call{Call: _e.mock.On("InsertExpenseAccount", ctx, arg)}
+}
+
+func (_c *MockQuerier_InsertExpenseAccount_Call) Run(run func(ctx context.Context, arg InsertExpenseAccountParams)) *MockQuerier_InsertExpenseAccount_Call {
+	_c.Call.Run(func(args mock.Arguments) {
+		run(args[0].(context.Context), args[1].(InsertExpenseAccountParams))
+	})
+	return _c
+}
+
+func (_c *MockQuerier_InsertExpenseAccount_Call) Return(_a0 error) *MockQuerier_InsertExpenseAccount_Call {
+	_c.Call.Return(_a0)
+	return _c
+}
+
+func (_c *MockQuerier_InsertExpenseAccount_Call) RunAndReturn(run func(context.Context, InsertExpenseAccountParams) error) *MockQuerier_InsertExpenseAccount_Call {
+	_c.Call.Return(run)
+	return _c
+}
+
+// InsertExpenseCategory provides a mock function with given fields: ctx, arg
+func (_m *MockQuerier) InsertExpenseCategory(ctx context.Context, arg InsertExpenseCategoryParams) error {
+	ret := _m.Called(ctx, arg)
+
+	if len(ret) == 0 {
+		panic("no return value specified for InsertExpenseCategory")
+	}
+
+	var r0 error
+	if rf, ok := ret.Get(0).(func(context.Context, InsertExpenseCategoryParams) error); ok {
+		r0 = rf(ctx, arg)
+	} else {
+		r0 = ret.Error(0)
+	}
+
+	return r0
+}
+
+// MockQuerier_InsertExpenseCategory_Call is a *mock.Call that shadows Run/Return methods with type explicit version for method 'InsertExpenseCategory'
+type MockQuerier_InsertExpenseCategory_Call struct {
+	*mock.Call
+}
+
+// InsertExpenseCategory is a helper method to define mock.On call
+//   - ctx context.Context
+//   - arg InsertExpenseCategoryParams
+func (_e *MockQuerier_Expecter) InsertExpenseCategory(ctx interface{}, arg interface{}) *MockQuerier_InsertExpenseCategory_Call {
+	return &MockQuerier_InsertExpenseCategory_Call{Call: _e.mock.On("InsertExpenseCategory", ctx, arg)}
+}
+
+func (_c *MockQuerier_InsertExpenseCategory_Call) Run(run func(ctx context.Context, arg InsertExpenseCategoryParams)) *MockQuerier_InsertExpenseCategory_Call {
+	_c.Call.Run(func(args mock.Arguments) {
+		run(args[0].(context.Context), args[1].(InsertExpenseCategoryParams))
+	})
+	return _c
+}
+
+func (_c *MockQuerier_InsertExpenseCategory_Call) Return(_a0 error) *MockQuerier_InsertExpenseCategory_Call {
+	_c.Call.Return(_a0)
+	return _c
+}
+
+func (_c *MockQuerier_InsertExpenseCategory_Call) RunAndReturn(run func(context.Context, InsertExpenseCategoryParams) error) *MockQuerier_InsertExpenseCategory_Call {
+	_c.Call.Return(run)
+	return _c
+}
+
+// InsertIncomeAccount provides a mock function with given fields: ctx, arg
+func (_m *MockQuerier) InsertIncomeAccount(ctx context.Context, arg InsertIncomeAccountParams) error {
+	ret := _m.Called(ctx, arg)
+
+	if len(ret) == 0 {
+		panic("no return value specified for InsertIncomeAccount")
+	}
+
+	var r0 error
+	if rf, ok := ret.Get(0).(func(context.Context, InsertIncomeAccountParams) error); ok {
+		r0 = rf(ctx, arg)
+	} else {
+		r0 = ret.Error(0)
+	}
+
+	return r0
+}
+
+// MockQuerier_InsertIncomeAccount_Call is a *mock.Call that shadows Run/Return methods with type explicit version for method 'InsertIncomeAccount'
+type MockQuerier_InsertIncomeAccount_Call struct {
+	*mock.Call
+}
+
+// InsertIncomeAccount is a helper method to define mock.On call
+//   - ctx context.Context
+//   - arg InsertIncomeAccountParams
+func (_e *MockQuerier_Expecter) InsertIncomeAccount(ctx interface{}, arg interface{}) *MockQuerier_InsertIncomeAccount_Call {
+	return &MockQuerier_InsertIncomeAccount_Call{Call: _e.mock.On("InsertIncomeAccount", ctx, arg)}
+}
+
+func (_c *MockQuerier_InsertIncomeAccount_Call) Run(run func(ctx context.Context, arg InsertIncomeAccountParams)) *MockQuerier_InsertIncomeAccount_Call {
+	_c.Call.Run(func(args mock.Arguments) {
+		run(args[0].(context.Context), args[1].(InsertIncomeAccountParams))
+	})
+	return _c
+}
+
+func (_c *MockQuerier_InsertIncomeAccount_Call) Return(_a0 error) *MockQuerier_InsertIncomeAccount_Call {
+	_c.Call.Return(_a0)
+	return _c
+}
+
+func (_c *MockQuerier_InsertIncomeAccount_Call) RunAndReturn(run func(context.Context, InsertIncomeAccountParams) error) *MockQuerier_InsertIncomeAccount_Call {
+	_c.Call.Return(run)
+	return _c
+}
+
+// InsertIncomeCategory provides a mock function with given fields: ctx, arg
+func (_m *MockQuerier) InsertIncomeCategory(ctx context.Context, arg InsertIncomeCategoryParams) error {
+	ret := _m.Called(ctx, arg)
+
+	if len(ret) == 0 {
+		panic("no return value specified for InsertIncomeCategory")
+	}
+
+	var r0 error
+	if rf, ok := ret.Get(0).(func(context.Context, InsertIncomeCategoryParams) error); ok {
+		r0 = rf(ctx, arg)
+	} else {
+		r0 = ret.Error(0)
+	}
+
+	return r0
+}
+
+// MockQuerier_InsertIncomeCategory_Call is a *mock.Call that shadows Run/Return methods with type explicit version for method 'InsertIncomeCategory'
+type MockQuerier_InsertIncomeCategory_Call struct {
+	*mock.Call
+}
+
+// InsertIncomeCategory is a helper method to define mock.On call
+//   - ctx context.Context
+//   - arg InsertIncomeCategoryParams
+func (_e *MockQuerier_Expecter) InsertIncomeCategory(ctx interface{}, arg interface{}) *MockQuerier_InsertIncomeCategory_Call {
+	return &MockQuerier_InsertIncomeCategory_Call{Call: _e.mock.On("InsertIncomeCategory", ctx, arg)}
+}
+
+func (_c *MockQuerier_InsertIncomeCategory_Call) Run(run func(ctx context.Context, arg InsertIncomeCategoryParams)) *MockQuerier_InsertIncomeCategory_Call {
+	_c.Call.Run(func(args mock.Arguments) {
+		run(args[0].(context.Context), args[1].(InsertIncomeCategoryParams))
+	})
+	return _c
+}
+
+func (_c *MockQuerier_InsertIncomeCategory_Call) Return(_a0 error) *MockQuerier_InsertIncomeCategory_Call {
+	_c.Call.Return(_a0)
+	return _c
+}
+
+func (_c *MockQuerier_InsertIncomeCategory_Call) RunAndReturn(run func(context.Context, InsertIncomeCategoryParams) error) *MockQuerier_InsertIncomeCategory_Call {
+	_c.Call.Return(run)
+	return _c
+}
+
+// InsertTransferCategory provides a mock function with given fields: ctx, arg
+func (_m *MockQuerier) InsertTransferCategory(ctx context.Context, arg InsertTransferCategoryParams) error {
+	ret := _m.Called(ctx, arg)
+
+	if len(ret) == 0 {
+		panic("no return value specified for InsertTransferCategory")
+	}
+
+	var r0 error
+	if rf, ok := ret.Get(0).(func(context.Context, InsertTransferCategoryParams) error); ok {
+		r0 = rf(ctx, arg)
+	} else {
+		r0 = ret.Error(0)
+	}
+
+	return r0
+}
+
+// MockQuerier_InsertTransferCategory_Call is a *mock.Call that shadows Run/Return methods with type explicit version for method 'InsertTransferCategory'
+type MockQuerier_InsertTransferCategory_Call struct {
+	*mock.Call
+}
+
+// InsertTransferCategory is a helper method to define mock.On call
+//   - ctx context.Context
+//   - arg InsertTransferCategoryParams
+func (_e *MockQuerier_Expecter) InsertTransferCategory(ctx interface{}, arg interface{}) *MockQuerier_InsertTransferCategory_Call {
+	return &MockQuerier_InsertTransferCategory_Call{Call: _e.mock.On("InsertTransferCategory", ctx, arg)}
+}
+
+func (_c *MockQuerier_InsertTransferCategory_Call) Run(run func(ctx context.Context, arg InsertTransferCategoryParams)) *MockQuerier_InsertTransferCategory_Call {
+	_c.Call.Run(func(args mock.Arguments) {
+		run(args[0].(context.Context), args[1].(InsertTransferCategoryParams))
+	})
+	return _c
+}
+
+func (_c *MockQuerier_InsertTransferCategory_Call) Return(_a0 error) *MockQuerier_InsertTransferCategory_Call {
+	_c.Call.Return(_a0)
+	return _c
+}
+
+func (_c *MockQuerier_InsertTransferCategory_Call) RunAndReturn(run func(context.Context, InsertTransferCategoryParams) error) *MockQuerier_InsertTransferCategory_Call {
+	_c.Call.Return(run)
+	return _c
+}
+
 // UpdateAccount provides a mock function with given fields: ctx, arg
 func (_m *MockQuerier) UpdateAccount(ctx context.Context, arg UpdateAccountParams) error {
 	ret := _m.Called(ctx, arg)
@@ -122,6 +832,241 @@ func (_c *MockQuerier_UpdateAccount_Call) Return(_a0 error) *MockQuerier_UpdateA
 }
 
 func (_c *MockQuerier_UpdateAccount_Call) RunAndReturn(run func(context.Context, UpdateAccountParams) error) *MockQuerier_UpdateAccount_Call {
+	_c.Call.Return(run)
+	return _c
+}
+
+// UpdateExpenseAccount provides a mock function with given fields: ctx, arg
+func (_m *MockQuerier) UpdateExpenseAccount(ctx context.Context, arg UpdateExpenseAccountParams) error {
+	ret := _m.Called(ctx, arg)
+
+	if len(ret) == 0 {
+		panic("no return value specified for UpdateExpenseAccount")
+	}
+
+	var r0 error
+	if rf, ok := ret.Get(0).(func(context.Context, UpdateExpenseAccountParams) error); ok {
+		r0 = rf(ctx, arg)
+	} else {
+		r0 = ret.Error(0)
+	}
+
+	return r0
+}
+
+// MockQuerier_UpdateExpenseAccount_Call is a *mock.Call that shadows Run/Return methods with type explicit version for method 'UpdateExpenseAccount'
+type MockQuerier_UpdateExpenseAccount_Call struct {
+	*mock.Call
+}
+
+// UpdateExpenseAccount is a helper method to define mock.On call
+//   - ctx context.Context
+//   - arg UpdateExpenseAccountParams
+func (_e *MockQuerier_Expecter) UpdateExpenseAccount(ctx interface{}, arg interface{}) *MockQuerier_UpdateExpenseAccount_Call {
+	return &MockQuerier_UpdateExpenseAccount_Call{Call: _e.mock.On("UpdateExpenseAccount", ctx, arg)}
+}
+
+func (_c *MockQuerier_UpdateExpenseAccount_Call) Run(run func(ctx context.Context, arg UpdateExpenseAccountParams)) *MockQuerier_UpdateExpenseAccount_Call {
+	_c.Call.Run(func(args mock.Arguments) {
+		run(args[0].(context.Context), args[1].(UpdateExpenseAccountParams))
+	})
+	return _c
+}
+
+func (_c *MockQuerier_UpdateExpenseAccount_Call) Return(_a0 error) *MockQuerier_UpdateExpenseAccount_Call {
+	_c.Call.Return(_a0)
+	return _c
+}
+
+func (_c *MockQuerier_UpdateExpenseAccount_Call) RunAndReturn(run func(context.Context, UpdateExpenseAccountParams) error) *MockQuerier_UpdateExpenseAccount_Call {
+	_c.Call.Return(run)
+	return _c
+}
+
+// UpdateExpenseCategory provides a mock function with given fields: ctx, arg
+func (_m *MockQuerier) UpdateExpenseCategory(ctx context.Context, arg UpdateExpenseCategoryParams) error {
+	ret := _m.Called(ctx, arg)
+
+	if len(ret) == 0 {
+		panic("no return value specified for UpdateExpenseCategory")
+	}
+
+	var r0 error
+	if rf, ok := ret.Get(0).(func(context.Context, UpdateExpenseCategoryParams) error); ok {
+		r0 = rf(ctx, arg)
+	} else {
+		r0 = ret.Error(0)
+	}
+
+	return r0
+}
+
+// MockQuerier_UpdateExpenseCategory_Call is a *mock.Call that shadows Run/Return methods with type explicit version for method 'UpdateExpenseCategory'
+type MockQuerier_UpdateExpenseCategory_Call struct {
+	*mock.Call
+}
+
+// UpdateExpenseCategory is a helper method to define mock.On call
+//   - ctx context.Context
+//   - arg UpdateExpenseCategoryParams
+func (_e *MockQuerier_Expecter) UpdateExpenseCategory(ctx interface{}, arg interface{}) *MockQuerier_UpdateExpenseCategory_Call {
+	return &MockQuerier_UpdateExpenseCategory_Call{Call: _e.mock.On("UpdateExpenseCategory", ctx, arg)}
+}
+
+func (_c *MockQuerier_UpdateExpenseCategory_Call) Run(run func(ctx context.Context, arg UpdateExpenseCategoryParams)) *MockQuerier_UpdateExpenseCategory_Call {
+	_c.Call.Run(func(args mock.Arguments) {
+		run(args[0].(context.Context), args[1].(UpdateExpenseCategoryParams))
+	})
+	return _c
+}
+
+func (_c *MockQuerier_UpdateExpenseCategory_Call) Return(_a0 error) *MockQuerier_UpdateExpenseCategory_Call {
+	_c.Call.Return(_a0)
+	return _c
+}
+
+func (_c *MockQuerier_UpdateExpenseCategory_Call) RunAndReturn(run func(context.Context, UpdateExpenseCategoryParams) error) *MockQuerier_UpdateExpenseCategory_Call {
+	_c.Call.Return(run)
+	return _c
+}
+
+// UpdateIncomeAccount provides a mock function with given fields: ctx, arg
+func (_m *MockQuerier) UpdateIncomeAccount(ctx context.Context, arg UpdateIncomeAccountParams) error {
+	ret := _m.Called(ctx, arg)
+
+	if len(ret) == 0 {
+		panic("no return value specified for UpdateIncomeAccount")
+	}
+
+	var r0 error
+	if rf, ok := ret.Get(0).(func(context.Context, UpdateIncomeAccountParams) error); ok {
+		r0 = rf(ctx, arg)
+	} else {
+		r0 = ret.Error(0)
+	}
+
+	return r0
+}
+
+// MockQuerier_UpdateIncomeAccount_Call is a *mock.Call that shadows Run/Return methods with type explicit version for method 'UpdateIncomeAccount'
+type MockQuerier_UpdateIncomeAccount_Call struct {
+	*mock.Call
+}
+
+// UpdateIncomeAccount is a helper method to define mock.On call
+//   - ctx context.Context
+//   - arg UpdateIncomeAccountParams
+func (_e *MockQuerier_Expecter) UpdateIncomeAccount(ctx interface{}, arg interface{}) *MockQuerier_UpdateIncomeAccount_Call {
+	return &MockQuerier_UpdateIncomeAccount_Call{Call: _e.mock.On("UpdateIncomeAccount", ctx, arg)}
+}
+
+func (_c *MockQuerier_UpdateIncomeAccount_Call) Run(run func(ctx context.Context, arg UpdateIncomeAccountParams)) *MockQuerier_UpdateIncomeAccount_Call {
+	_c.Call.Run(func(args mock.Arguments) {
+		run(args[0].(context.Context), args[1].(UpdateIncomeAccountParams))
+	})
+	return _c
+}
+
+func (_c *MockQuerier_UpdateIncomeAccount_Call) Return(_a0 error) *MockQuerier_UpdateIncomeAccount_Call {
+	_c.Call.Return(_a0)
+	return _c
+}
+
+func (_c *MockQuerier_UpdateIncomeAccount_Call) RunAndReturn(run func(context.Context, UpdateIncomeAccountParams) error) *MockQuerier_UpdateIncomeAccount_Call {
+	_c.Call.Return(run)
+	return _c
+}
+
+// UpdateIncomeCategory provides a mock function with given fields: ctx, arg
+func (_m *MockQuerier) UpdateIncomeCategory(ctx context.Context, arg UpdateIncomeCategoryParams) error {
+	ret := _m.Called(ctx, arg)
+
+	if len(ret) == 0 {
+		panic("no return value specified for UpdateIncomeCategory")
+	}
+
+	var r0 error
+	if rf, ok := ret.Get(0).(func(context.Context, UpdateIncomeCategoryParams) error); ok {
+		r0 = rf(ctx, arg)
+	} else {
+		r0 = ret.Error(0)
+	}
+
+	return r0
+}
+
+// MockQuerier_UpdateIncomeCategory_Call is a *mock.Call that shadows Run/Return methods with type explicit version for method 'UpdateIncomeCategory'
+type MockQuerier_UpdateIncomeCategory_Call struct {
+	*mock.Call
+}
+
+// UpdateIncomeCategory is a helper method to define mock.On call
+//   - ctx context.Context
+//   - arg UpdateIncomeCategoryParams
+func (_e *MockQuerier_Expecter) UpdateIncomeCategory(ctx interface{}, arg interface{}) *MockQuerier_UpdateIncomeCategory_Call {
+	return &MockQuerier_UpdateIncomeCategory_Call{Call: _e.mock.On("UpdateIncomeCategory", ctx, arg)}
+}
+
+func (_c *MockQuerier_UpdateIncomeCategory_Call) Run(run func(ctx context.Context, arg UpdateIncomeCategoryParams)) *MockQuerier_UpdateIncomeCategory_Call {
+	_c.Call.Run(func(args mock.Arguments) {
+		run(args[0].(context.Context), args[1].(UpdateIncomeCategoryParams))
+	})
+	return _c
+}
+
+func (_c *MockQuerier_UpdateIncomeCategory_Call) Return(_a0 error) *MockQuerier_UpdateIncomeCategory_Call {
+	_c.Call.Return(_a0)
+	return _c
+}
+
+func (_c *MockQuerier_UpdateIncomeCategory_Call) RunAndReturn(run func(context.Context, UpdateIncomeCategoryParams) error) *MockQuerier_UpdateIncomeCategory_Call {
+	_c.Call.Return(run)
+	return _c
+}
+
+// UpdateTransferCategory provides a mock function with given fields: ctx, arg
+func (_m *MockQuerier) UpdateTransferCategory(ctx context.Context, arg UpdateTransferCategoryParams) error {
+	ret := _m.Called(ctx, arg)
+
+	if len(ret) == 0 {
+		panic("no return value specified for UpdateTransferCategory")
+	}
+
+	var r0 error
+	if rf, ok := ret.Get(0).(func(context.Context, UpdateTransferCategoryParams) error); ok {
+		r0 = rf(ctx, arg)
+	} else {
+		r0 = ret.Error(0)
+	}
+
+	return r0
+}
+
+// MockQuerier_UpdateTransferCategory_Call is a *mock.Call that shadows Run/Return methods with type explicit version for method 'UpdateTransferCategory'
+type MockQuerier_UpdateTransferCategory_Call struct {
+	*mock.Call
+}
+
+// UpdateTransferCategory is a helper method to define mock.On call
+//   - ctx context.Context
+//   - arg UpdateTransferCategoryParams
+func (_e *MockQuerier_Expecter) UpdateTransferCategory(ctx interface{}, arg interface{}) *MockQuerier_UpdateTransferCategory_Call {
+	return &MockQuerier_UpdateTransferCategory_Call{Call: _e.mock.On("UpdateTransferCategory", ctx, arg)}
+}
+
+func (_c *MockQuerier_UpdateTransferCategory_Call) Run(run func(ctx context.Context, arg UpdateTransferCategoryParams)) *MockQuerier_UpdateTransferCategory_Call {
+	_c.Call.Run(func(args mock.Arguments) {
+		run(args[0].(context.Context), args[1].(UpdateTransferCategoryParams))
+	})
+	return _c
+}
+
+func (_c *MockQuerier_UpdateTransferCategory_Call) Return(_a0 error) *MockQuerier_UpdateTransferCategory_Call {
+	_c.Call.Return(_a0)
+	return _c
+}
+
+func (_c *MockQuerier_UpdateTransferCategory_Call) RunAndReturn(run func(context.Context, UpdateTransferCategoryParams) error) *MockQuerier_UpdateTransferCategory_Call {
 	_c.Call.Return(run)
 	return _c
 }

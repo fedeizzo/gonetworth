@@ -40,6 +40,243 @@ func (q *Queries) GetAccounts(ctx context.Context) ([]Account, error) {
 	return items, nil
 }
 
+const getExpenseAccounts = `-- name: GetExpenseAccounts :many
+SELECT id, name, notes FROM expense_accounts
+`
+
+func (q *Queries) GetExpenseAccounts(ctx context.Context) ([]ExpenseAccount, error) {
+	rows, err := q.db.Query(ctx, getExpenseAccounts)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+	var items []ExpenseAccount
+	for rows.Next() {
+		var i ExpenseAccount
+		if err := rows.Scan(&i.ID, &i.Name, &i.Notes); err != nil {
+			return nil, err
+		}
+		items = append(items, i)
+	}
+	if err := rows.Err(); err != nil {
+		return nil, err
+	}
+	return items, nil
+}
+
+const getExpenseCategories = `-- name: GetExpenseCategories :many
+SELECT id, name, notes FROM expense_categories
+`
+
+func (q *Queries) GetExpenseCategories(ctx context.Context) ([]ExpenseCategory, error) {
+	rows, err := q.db.Query(ctx, getExpenseCategories)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+	var items []ExpenseCategory
+	for rows.Next() {
+		var i ExpenseCategory
+		if err := rows.Scan(&i.ID, &i.Name, &i.Notes); err != nil {
+			return nil, err
+		}
+		items = append(items, i)
+	}
+	if err := rows.Err(); err != nil {
+		return nil, err
+	}
+	return items, nil
+}
+
+const getExpenses = `-- name: GetExpenses :exec
+SELECT id, amount, description, date, source, destination, category FROM expenses
+`
+
+func (q *Queries) GetExpenses(ctx context.Context) error {
+	_, err := q.db.Exec(ctx, getExpenses)
+	return err
+}
+
+const getIncomeAccounts = `-- name: GetIncomeAccounts :many
+SELECT id, name, notes FROM income_accounts
+`
+
+func (q *Queries) GetIncomeAccounts(ctx context.Context) ([]IncomeAccount, error) {
+	rows, err := q.db.Query(ctx, getIncomeAccounts)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+	var items []IncomeAccount
+	for rows.Next() {
+		var i IncomeAccount
+		if err := rows.Scan(&i.ID, &i.Name, &i.Notes); err != nil {
+			return nil, err
+		}
+		items = append(items, i)
+	}
+	if err := rows.Err(); err != nil {
+		return nil, err
+	}
+	return items, nil
+}
+
+const getIncomeCategories = `-- name: GetIncomeCategories :many
+SELECT id, name, notes FROM income_categories
+`
+
+func (q *Queries) GetIncomeCategories(ctx context.Context) ([]IncomeCategory, error) {
+	rows, err := q.db.Query(ctx, getIncomeCategories)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+	var items []IncomeCategory
+	for rows.Next() {
+		var i IncomeCategory
+		if err := rows.Scan(&i.ID, &i.Name, &i.Notes); err != nil {
+			return nil, err
+		}
+		items = append(items, i)
+	}
+	if err := rows.Err(); err != nil {
+		return nil, err
+	}
+	return items, nil
+}
+
+const getIncomes = `-- name: GetIncomes :exec
+SELECT id, amount, description, date, source, destination, category FROM incomes
+`
+
+func (q *Queries) GetIncomes(ctx context.Context) error {
+	_, err := q.db.Exec(ctx, getIncomes)
+	return err
+}
+
+const getTransferCategories = `-- name: GetTransferCategories :many
+SELECT id, name, notes FROM transfer_categories
+`
+
+func (q *Queries) GetTransferCategories(ctx context.Context) ([]TransferCategory, error) {
+	rows, err := q.db.Query(ctx, getTransferCategories)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+	var items []TransferCategory
+	for rows.Next() {
+		var i TransferCategory
+		if err := rows.Scan(&i.ID, &i.Name, &i.Notes); err != nil {
+			return nil, err
+		}
+		items = append(items, i)
+	}
+	if err := rows.Err(); err != nil {
+		return nil, err
+	}
+	return items, nil
+}
+
+const getTransfers = `-- name: GetTransfers :exec
+SELECT id, amount, description, date, source, destination, category FROM transfers
+`
+
+func (q *Queries) GetTransfers(ctx context.Context) error {
+	_, err := q.db.Exec(ctx, getTransfers)
+	return err
+}
+
+const insertAccount = `-- name: InsertAccount :exec
+INSERT INTO accounts(name, notes)
+VALUES ($1, $2)
+`
+
+type InsertAccountParams struct {
+	Name  string
+	Notes *string
+}
+
+func (q *Queries) InsertAccount(ctx context.Context, arg InsertAccountParams) error {
+	_, err := q.db.Exec(ctx, insertAccount, arg.Name, arg.Notes)
+	return err
+}
+
+const insertExpenseAccount = `-- name: InsertExpenseAccount :exec
+INSERT INTO expense_accounts(name, notes)
+VALUES ($1, $2)
+`
+
+type InsertExpenseAccountParams struct {
+	Name  string
+	Notes *string
+}
+
+func (q *Queries) InsertExpenseAccount(ctx context.Context, arg InsertExpenseAccountParams) error {
+	_, err := q.db.Exec(ctx, insertExpenseAccount, arg.Name, arg.Notes)
+	return err
+}
+
+const insertExpenseCategory = `-- name: InsertExpenseCategory :exec
+INSERT INTO expense_categories(name, notes)
+VALUES ($1, $2)
+`
+
+type InsertExpenseCategoryParams struct {
+	Name  string
+	Notes *string
+}
+
+func (q *Queries) InsertExpenseCategory(ctx context.Context, arg InsertExpenseCategoryParams) error {
+	_, err := q.db.Exec(ctx, insertExpenseCategory, arg.Name, arg.Notes)
+	return err
+}
+
+const insertIncomeAccount = `-- name: InsertIncomeAccount :exec
+INSERT INTO income_accounts(name, notes)
+VALUES ($1, $2)
+`
+
+type InsertIncomeAccountParams struct {
+	Name  string
+	Notes *string
+}
+
+func (q *Queries) InsertIncomeAccount(ctx context.Context, arg InsertIncomeAccountParams) error {
+	_, err := q.db.Exec(ctx, insertIncomeAccount, arg.Name, arg.Notes)
+	return err
+}
+
+const insertIncomeCategory = `-- name: InsertIncomeCategory :exec
+INSERT INTO income_categories(name, notes)
+VALUES ($1, $2)
+`
+
+type InsertIncomeCategoryParams struct {
+	Name  string
+	Notes *string
+}
+
+func (q *Queries) InsertIncomeCategory(ctx context.Context, arg InsertIncomeCategoryParams) error {
+	_, err := q.db.Exec(ctx, insertIncomeCategory, arg.Name, arg.Notes)
+	return err
+}
+
+const insertTransferCategory = `-- name: InsertTransferCategory :exec
+INSERT INTO transfer_categories(name, notes)
+VALUES ($1, $2)
+`
+
+type InsertTransferCategoryParams struct {
+	Name  string
+	Notes *string
+}
+
+func (q *Queries) InsertTransferCategory(ctx context.Context, arg InsertTransferCategoryParams) error {
+	_, err := q.db.Exec(ctx, insertTransferCategory, arg.Name, arg.Notes)
+	return err
+}
+
 const updateAccount = `-- name: UpdateAccount :exec
 UPDATE accounts
 SET
@@ -51,7 +288,7 @@ WHERE id = $4
 
 type UpdateAccountParams struct {
 	Name  string
-	Notes pgtype.Text
+	Notes *string
 	Align pgtype.Numeric
 	ID    int32
 }
@@ -63,5 +300,100 @@ func (q *Queries) UpdateAccount(ctx context.Context, arg UpdateAccountParams) er
 		arg.Align,
 		arg.ID,
 	)
+	return err
+}
+
+const updateExpenseAccount = `-- name: UpdateExpenseAccount :exec
+UPDATE expense_accounts
+SET
+        name = $1,
+        notes = $2
+WHERE id = $3
+`
+
+type UpdateExpenseAccountParams struct {
+	Name  string
+	Notes *string
+	ID    int32
+}
+
+func (q *Queries) UpdateExpenseAccount(ctx context.Context, arg UpdateExpenseAccountParams) error {
+	_, err := q.db.Exec(ctx, updateExpenseAccount, arg.Name, arg.Notes, arg.ID)
+	return err
+}
+
+const updateExpenseCategory = `-- name: UpdateExpenseCategory :exec
+UPDATE expense_categories
+SET
+        name = $1,
+        notes = $2
+WHERE id = $3
+`
+
+type UpdateExpenseCategoryParams struct {
+	Name  string
+	Notes *string
+	ID    int32
+}
+
+func (q *Queries) UpdateExpenseCategory(ctx context.Context, arg UpdateExpenseCategoryParams) error {
+	_, err := q.db.Exec(ctx, updateExpenseCategory, arg.Name, arg.Notes, arg.ID)
+	return err
+}
+
+const updateIncomeAccount = `-- name: UpdateIncomeAccount :exec
+UPDATE income_accounts
+SET
+        name = $1,
+        notes = $2
+WHERE id = $3
+`
+
+type UpdateIncomeAccountParams struct {
+	Name  string
+	Notes *string
+	ID    int32
+}
+
+func (q *Queries) UpdateIncomeAccount(ctx context.Context, arg UpdateIncomeAccountParams) error {
+	_, err := q.db.Exec(ctx, updateIncomeAccount, arg.Name, arg.Notes, arg.ID)
+	return err
+}
+
+const updateIncomeCategory = `-- name: UpdateIncomeCategory :exec
+UPDATE income_categories
+SET
+        name = $1,
+        notes = $2
+WHERE id = $3
+`
+
+type UpdateIncomeCategoryParams struct {
+	Name  string
+	Notes *string
+	ID    int32
+}
+
+func (q *Queries) UpdateIncomeCategory(ctx context.Context, arg UpdateIncomeCategoryParams) error {
+	_, err := q.db.Exec(ctx, updateIncomeCategory, arg.Name, arg.Notes, arg.ID)
+	return err
+}
+
+const updateTransferCategory = `-- name: UpdateTransferCategory :exec
+UPDATE transfer_categories
+SET
+        name = $1,
+        notes = $2
+WHERE id = $3
+`
+
+type UpdateTransferCategoryParams struct {
+	Name  string
+	Notes *string
+	ID    int32
+}
+
+func (q *Queries) UpdateTransferCategory(ctx context.Context, arg UpdateTransferCategoryParams) error {
+	_, err := q.db.Exec(ctx, updateTransferCategory, arg.Name, arg.Notes, arg.ID)
 	return err
 }

@@ -5,78 +5,80 @@
 package db
 
 import (
+	"time"
+
 	"github.com/jackc/pgx/v5/pgtype"
 )
 
 type Account struct {
 	ID    int32
 	Name  string
-	Notes pgtype.Text
+	Notes *string
 	Align pgtype.Numeric
 }
 
 type Budget struct {
 	ID       int32
-	Amount   pgtype.Numeric
-	Category pgtype.Int4
+	Amount   float64
+	Category *int32
 }
 
 type Expense struct {
 	ID          int32
-	Amount      pgtype.Numeric
-	Description pgtype.Text
-	Date        pgtype.Date
-	Source      pgtype.Int4
-	Destination pgtype.Int4
-	Category    pgtype.Int4
+	Amount      float64
+	Description *string
+	Date        time.Time
+	Source      *int32
+	Destination *int32
+	Category    *int32
 }
 
 type ExpenseAccount struct {
 	ID    int32
 	Name  string
-	Notes pgtype.Text
+	Notes *string
 }
 
 type ExpenseCategory struct {
 	ID    int32
 	Name  string
-	Notes pgtype.Text
+	Notes *string
 }
 
 type Income struct {
 	ID          int32
-	Amount      pgtype.Numeric
-	Description pgtype.Text
-	Date        pgtype.Date
-	Source      pgtype.Int4
-	Destination pgtype.Int4
-	Category    pgtype.Int4
+	Amount      float64
+	Description *string
+	Date        time.Time
+	Source      *int32
+	Destination *int32
+	Category    *int32
 }
 
 type IncomeAccount struct {
 	ID    int32
 	Name  string
-	Notes pgtype.Text
+	Notes *string
 }
 
 type IncomeCategory struct {
 	ID    int32
 	Name  string
-	Notes pgtype.Text
+	Notes *string
 }
 
 type Transfer struct {
 	ID          int32
-	Amount      pgtype.Numeric
-	Description pgtype.Text
-	Date        pgtype.Date
-	Source      pgtype.Int4
-	Destination pgtype.Int4
-	Category    pgtype.Int4
+	Amount      float64
+	Description *string
+	Date        time.Time
+	Source      *int32
+	Destination *int32
+	Category    *int32
 }
 
 type TransferCategory struct {
 	ID    int32
 	Name  string
-	Notes pgtype.Text
+	Notes *string
 }

@@ -10,7 +10,26 @@ import (
 
 type Querier interface {
 	GetAccounts(ctx context.Context) ([]Account, error)
+	GetExpenseAccounts(ctx context.Context) ([]ExpenseAccount, error)
+	GetExpenseCategories(ctx context.Context) ([]ExpenseCategory, error)
+	GetExpenses(ctx context.Context) error
+	GetIncomeAccounts(ctx context.Context) ([]IncomeAccount, error)
+	GetIncomeCategories(ctx context.Context) ([]IncomeCategory, error)
+	GetIncomes(ctx context.Context) error
+	GetTransferCategories(ctx context.Context) ([]TransferCategory, error)
+	GetTransfers(ctx context.Context) error
+	InsertAccount(ctx context.Context, arg InsertAccountParams) error
+	InsertExpenseAccount(ctx context.Context, arg InsertExpenseAccountParams) error
+	InsertExpenseCategory(ctx context.Context, arg InsertExpenseCategoryParams) error
+	InsertIncomeAccount(ctx context.Context, arg InsertIncomeAccountParams) error
+	InsertIncomeCategory(ctx context.Context, arg InsertIncomeCategoryParams) error
+	InsertTransferCategory(ctx context.Context, arg InsertTransferCategoryParams) error
 	UpdateAccount(ctx context.Context, arg UpdateAccountParams) error
+	UpdateExpenseAccount(ctx context.Context, arg UpdateExpenseAccountParams) error
+	UpdateExpenseCategory(ctx context.Context, arg UpdateExpenseCategoryParams) error
+	UpdateIncomeAccount(ctx context.Context, arg UpdateIncomeAccountParams) error
+	UpdateIncomeCategory(ctx context.Context, arg UpdateIncomeCategoryParams) error
+	UpdateTransferCategory(ctx context.Context, arg UpdateTransferCategoryParams) error
 }
 
 var _ Querier = (*Queries)(nil)
