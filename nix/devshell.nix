@@ -29,12 +29,16 @@
     ];
 
     packages = with pkgs; [
+      # backend
       go
       gopls
+      gomodifytags
       gotestsum
       gotestdox
       sqlc
       go-mockery
+
+      # frontend
     ] ++ config.pre-commit.settings.enabledPackages;
 
     devshell.startup.pre-commit-hooks.text = config.pre-commit.installationScript;

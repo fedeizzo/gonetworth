@@ -5,6 +5,7 @@ import (
 	"io"
 
 	"github.com/gocarina/gocsv"
+	"github.com/lithammer/fuzzysearch/fuzzy"
 )
 
 type transaction struct {
@@ -27,7 +28,12 @@ func (p n26) Parse(reader io.Reader) {
 		panic(err)
 	}
 
+	var actors []string
 	for _, t := range transactions {
 		fmt.Println(t)
+		actors = append(actors, t.Actor)
 	}
+
+	matches := fuzzy.Find("au", actors)
+	fmt.Println("matches", matches)
 }
