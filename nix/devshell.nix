@@ -26,6 +26,21 @@
         name = "run";
         command = "go run cmd/main.go";
       }
+      {
+        help = "Generate code from postgres schema/queries using sqlc";
+        name = "codegen-db";
+        command = "${pkgs.sqlc}/bin/sqlc generate";
+      }
+      {
+        help = "Generate mocks from using mockery";
+        name = "codegen-mock";
+        command = "${pkgs.go-mockery}/bin/mockery";
+      }
+      {
+        help = "Generate server from openapi specs";
+        name = "codegen-openapi-server";
+        command = "${pkgs.oapi-codegen}/bin/oapi-codegen --config=./internal/web/api/cfg.yaml openapi/openapi.yaml";
+      }
     ];
 
     packages = with pkgs; [
@@ -37,8 +52,10 @@
       gotestdox
       sqlc
       go-mockery
+      oapi-codegen
 
       # frontend
+      nodejs_22
     ] ++ config.pre-commit.settings.enabledPackages;
 
     devshell.startup.pre-commit-hooks.text = config.pre-commit.installationScript;
